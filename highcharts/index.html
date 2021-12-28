@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./css/highCharts.css" type="text/css" rel="stylesheet" />
+    <script src="./js/highCharts.js"></script>
+    <style>
+        #myCharts{
+            width: 500px;
+            height: 500px;
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div id="myCharts"></div>
+    <script src="./js/VolumeWave.js"></script>
+    <script>
+        let volumeWave = new VolumeWave(Highcharts,'myCharts')
+        setInterval(()=>{
+            let data = []
+            data.push([...new Array(100).keys()].map(a=>Math.random()*96))
+            data.push([...new Array(100).keys()].map(a=>Math.random()*96))
+            volumeWave.setVolumeVal(data)
+        },1000)
+    </script>
+</body>
+</html>

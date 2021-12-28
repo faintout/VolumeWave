@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #canvasArea {
+            width: 500px;
+            height: 500px;
+            background-color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="canvasArea">
+    </div>
+    <script src="./js/VolumeWaveCanvas.js"></script>
+    <script>
+        let volumeWave = new VolumeWave('canvasArea','canvas')
+        setInterval(() => {
+            volumeWave.setVolumeVal([[...new Array(100).keys()].map(i=>Math.ceil(Math.random()*-95)),[...new Array(100).keys()].map(i=>Math.ceil(Math.random()*-95-1))])
+        },1000);
+    </script>
+    <script>
+    </script>
+</body>
+
+</html>
